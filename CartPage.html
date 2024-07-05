@@ -1,0 +1,48 @@
+<html>
+<title>Your Cart</title>
+<head>
+    <link rel="stylesheet" href="background1.css">
+</head>
+<body align="center"  background="plants.jpg">
+    <h1>Your Cart Below</h1>
+    <hr>
+<nav>
+    <a href="About.html" target=_blank title="Button to the About Us page" > <button style="height:30px;" id="button">About Us</button></a>
+    <a href="main.html" target=_self title="Go back to shopping" ><button style="height:30px;" id="button">Go back to Shop</button></nav></a>
+</nav>
+    <h4 id="roses-quantity">Number of roses: 0</h4>
+    <h4 id="tulips-quantity">Number of tulips: 0</h4>
+    <h4 id="dahlias-quantity">Number of Dahlias: 0</h4>
+    <br>
+    <h4 id="total">Total: $0.00</h4>
+    <button id="checkout">Check Out</button>
+    <button id="reset-cart" onclick="resetCart()">Clear Cart</button>
+
+    <script>
+        var cart = JSON.parse(localStorage.getItem("cart"));
+
+        if (cart) {
+            var total = 0;
+            for (var item in cart) {
+                document.getElementById(item + "-quantity").innerHTML = "Number of " + item + ": " + cart[item].quantity;
+                total += cart[item].price * cart[item].quantity;
+            }
+            document.getElementById("total").innerHTML = "Total: $" + total.toFixed(2);
+        }
+        else{
+            document.getElementById("roses-quantity").innerHTML = "Number of roses: 0";
+            document.getElementById("tulips-quantity").innerHTML = "Number of tulips: 0";
+            document.getElementById("dahlias-quantity").innerHTML = "Number of Dahlias: 0";
+            document.getElementById("total").innerHTML = "Total: $0.00";
+        }
+
+        function resetCart() {
+            localStorage.removeItem("cart");
+            document.getElementById("roses-quantity").innerHTML = "Number of roses: 0";
+            document.getElementById("tulips-quantity").innerHTML = "Number of tulips: 0";
+            document.getElementById("dahlias-quantity").innerHTML = "Number of Dahlias: 0";
+            document.getElementById("total").innerHTML = "Total: $0.00";
+        }
+    </script>
+</body>
+</html>

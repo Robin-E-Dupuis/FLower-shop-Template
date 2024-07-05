@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Flowers and Love</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Html page that redirects user to my flower store">
+    <meta name="keywords" content ="flower, love, gift, pretty, nature, romantic, colorful">
+    <meta name="author" content="robin dupuis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3000">
+    <link rel="stylesheet" href="background1.css">
+    <link rel="stylesheet" href="paragraph.css">
+</head>
+
+<body align="center" background="plants.jpg">
+    <h1>Flowers and Love</h1>
+    <div class="cart">
+        <p id="items">0</p>
+        <a href="CartPage.html"><img id="cart" src="cart.png" height="20px" margin="auto"></a>
+    </div>
+
+    <hr>
+    <br>
+    <nav>
+        <a href="About.html" target=_blank title="Button to the About Us page"> <button style="height:30px;" id="button">About Us</button></a>
+        <a href="index.html" target=_self title="You are already here"><button style="height:30px;" id="button">Shop Here</button></nav></a>
+    </nav>
+    <br>
+
+    <img src="roses.jpg" height="250" width="225" title="click to buy roses 5$/unit" id="roses" value="5" onclick="addItem('roses', 5)">
+    <br>
+    <p>Roses symbolize love, royalty, beauty, sensuality, secrecy, and mysticism.<br>
+        They are also associated with achievement and perfection. <br>
+        Roses are prized around the world, among the most beloved and popular flowers. <br>
+        Their fragrance is instantly recognized, but complex and distinct between varieties.</p>
+    <br>
+    <img src="tulipes.jpg" height="250" width="225" title="Click to buy tulips 2$/unit" id="tulips" value="2" onclick="addItem('tulips', 2)">
+    <br>
+    <p>
+        Just like red roses, the tulip is a symbol of passion and intense love.<br>
+         It is the ideal flower for Valentine's day.<br>
+          It is a popular flower in european countries such as France.
+    </p>
+    <br>
+    <img src="dahlia.jpg" height="250" width="225" title="click to buy dahlias 3.50$/unit" id="dahlias" value="3.50" onclick="addItem('dahlias', 3.50)">
+    <br>
+    <p>Dahlias symbolize elegance, creativity, positivity, and growth.
+        <br> It also represents inner strength, likely due to the plant's ability to tolerate harsh conditions. 
+        <br>Other general meanings associated with the dahlia is gracefulness, standing out in a crowd, and embracing positive changes.</p>
+
+    <br>
+    <br>
+
+    <script>
+        var cart = {};
+
+        function addItem(item, price) {
+            if (cart[item]) {
+                cart[item].quantity++;
+            } else {
+                cart[item] = { quantity: 1, price: price };
+            }
+            updateCart();
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function updateCart() {
+            var totalItems = 0;
+            for (var item in cart) {
+                totalItems += cart[item].quantity;
+            }
+            document.getElementById("items").innerHTML = totalItems;
+        }
+    </script>
+</body>
+
+<footer>
+    <h5>All copyrights due to Website Owner©</h5>
+</footer>
+</html>

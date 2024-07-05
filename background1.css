@@ -1,0 +1,55 @@
+
+body{
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+button{
+    background-color: green;
+    color:white;
+    border-radius: 20px;
+  
+}
+
+#button:hover{
+
+    background-color: rgb(43, 218, 101);
+}
+#reset-cart:hover{
+    background-color: rgb(43, 218, 101);
+}
+
+
+#checkout:hover{
+    background-color: rgb(43, 218, 101);
+}
+
+h1{
+    background-color: rgb(168, 255, 169);
+    color:green;
+}
+#checkout{
+    background-color: green;
+    color:white;
+   
+    height:50px;
+    width:auto;
+}
+#reset-cart{
+    background-color: green;
+    color:white;
+   
+    height:50px;
+    width:auto;
+}
+
+#button{
+    transform: translateY(-10);
+}
+
+
+.cart{
+    position:sticky;
+    top:0px;
+    
+    
+    }

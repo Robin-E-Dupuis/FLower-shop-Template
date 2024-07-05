@@ -1,0 +1,17 @@
+p{
+    background-color: green;
+    color:beige;
+    width:350px;
+    margin:auto;
+}
+img:hover{
+    transform: translateY(-10px);
+}
+#cart:hover{
+   transform: translateY(+2.5px);
+}
+
+#items{
+width:40px;
+
+}
